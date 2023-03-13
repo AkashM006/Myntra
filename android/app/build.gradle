@@ -126,6 +126,7 @@ android {
         }
     }
     buildTypes {
+        flavorDimensions "default"
         productFlavors{
             production{}
             development{}
