@@ -5,10 +5,10 @@ import HomeStack from '../Navigation/HomeStack'
 
 const MainScreen = () => {
 
-    const {theme, colors} = useSelector(state => state.theme)
+  const { theme, colors } = useSelector(state => state.theme)
 
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: colors['LIGHT']}}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: colors['LIGHT'] }}>
       <StatusBar
         barStyle={theme === 'light' ? 'dark-content' : 'light-content'}
         backgroundColor={colors['LIGHT']}
