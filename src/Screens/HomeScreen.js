@@ -1,13 +1,16 @@
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
 import React from 'react'
 
 const HomeScreen = () => {
 
   // here Get request for all the items going to display on the screen
 
+  const getData = async _ => {
+        
+  }
+
   return (
     <View>
-      <Text>HomeScreen</Text>
     </View>
   )
 }
