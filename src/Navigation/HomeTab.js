@@ -47,10 +47,6 @@ function HomeTab(){
         }
     }
 
-    const heightStyle = {
-        height: height / 28
-    }
-
     return (
         <Tab.Navigator>
             <Tab.Screen
