@@ -11,13 +11,8 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistor, store } from './src/Redux/Store';
 import MainScreen from './src/Screens/MainScreen';
-import Config from 'react-native-config';
 
 function App() {
-
-  const isDarkMode = true
-
-  console.log("API_KEY: ", Config)
 
   return (
     <Provider store={store}>

@@ -56,10 +56,9 @@ const styles = StyleSheet.create({
         paddingHorizontal: horizontalScale(20),
         flexDirection: 'row',
         alignItems: 'center',
-        elevation: 10,
-        shadowColor: 'rgba(0,0,0,0.8)',
-        shadowOffset: '2',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        borderBottomColor: 'rgba(0,0,0,0.1)',
+        borderBottomWidth: moderateScale(2)
     },
     logo: {
         height: verticalScale(30),

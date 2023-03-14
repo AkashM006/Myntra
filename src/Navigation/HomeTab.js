@@ -1,10 +1,11 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Image, StyleSheet, Text, useWindowDimensions } from "react-native";
+import { Image, StyleSheet } from "react-native";
 import HomeScreen from '../Screens/HomeScreen'
 import CategoriesScreen from '../Screens/CategoriesScreen'
 import ICONS from '../icons/icons'
 import { useSelector } from "react-redux";
 import CustomText from "../Components/Reusable/CustomText";
+import { verticalScale } from "../utils/Metrics";
 
 const Tab = createBottomTabNavigator()
 
@@ -12,16 +13,9 @@ function HomeTab(){
 
     const {colors} = useSelector(state => state.theme)
 
-    const {height} = useWindowDimensions()
-
     const textColor = {
         true: colors['PRIMARY'],
         false: colors['SHADEDARK']
-    }
-
-    const weight = {
-        true: '700',
-        false: '300'
     }
 
     const icons = {
@@ -55,7 +49,7 @@ function HomeTab(){
                 options={{
                     header:() => {},
                     tabBarLabel: ({focused}) => {
-                        return <Text style={{color: textColor[focused], fontWeight: weight[focused]}}>Home</Text>
+                        return <CustomText weight={focused ? 'bold' : 'light'} color={textColor[focused]}>Home</CustomText>
                     },
                     tabBarLabelPosition: 'below-icon',
                     tabBarIcon: ({focused}) => <TabIcon image={icons['home'][focused]} />
@@ -81,11 +75,7 @@ function HomeTab(){
 
 const TabIcon = ({image, focused}) => {
     const {colors} = useSelector(state => state.theme)
-    const {height} = useWindowDimensions()
-
-    let style = {
-        height: height / 28
-    }
+    let style = { }
 
     if(focused !== undefined)
         style.tintColor = focused ? colors['PRIMARY'] : colors['DARK']
@@ -99,7 +89,8 @@ const TabIcon = ({image, focused}) => {
 const styles = StyleSheet.create({
     icon: {
         aspectRatio: 1,
-        resizeMode: 'contain'
+        resizeMode: 'contain',
+        height: verticalScale(20)
     }
 })
 
