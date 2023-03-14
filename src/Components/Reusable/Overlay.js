@@ -2,10 +2,10 @@ import { StyleSheet, Pressable } from 'react-native'
 import React from 'react'
 import CustomLoader from './CustomLoader'
 
-const Overlay = ({ render, hideShadow, onPressHandler, hideLoader, zIndex }) => {
+const Overlay = ({ render, hideShadow, onPressHandler, hideLoader, zIndex, removeShadow }) => {
 
     let style = {
-        backgroundColor: hideShadow ? 'rgba(0,0,0,0.1)' : 'rgba(0,0,0,0.6)',
+        backgroundColor: removeShadow ? 'rgba(0,0,0,0)' : hideShadow ? 'rgba(0,0,0,0.1)' : 'rgba(0,0,0,0.6)',
         zIndex: zIndex ?? 10,
     }
 

@@ -9,9 +9,9 @@ import { verticalScale } from "../utils/Metrics";
 
 const Tab = createBottomTabNavigator()
 
-function HomeTab(){
+function HomeTab() {
 
-    const {colors} = useSelector(state => state.theme)
+    const { colors } = useSelector(state => state.theme)
 
     const textColor = {
         true: colors['PRIMARY'],
@@ -42,55 +42,59 @@ function HomeTab(){
     }
 
     return (
-        <Tab.Navigator>
+        <Tab.Navigator screenOptions={{
+            tabBarStyle: {
+                height: verticalScale(70),
+            }
+        }}>
             <Tab.Screen
                 name='home'
                 component={HomeScreen}
                 options={{
-                    header:() => {},
-                    tabBarLabel: ({focused}) => {
+                    header: () => { },
+                    tabBarLabel: ({ focused }) => {
                         return <CustomText weight={focused ? 'bold' : 'light'} color={textColor[focused]}>Home</CustomText>
                     },
                     tabBarLabelPosition: 'below-icon',
-                    tabBarIcon: ({focused}) => <TabIcon image={icons['home'][focused]} />
+                    tabBarIcon: ({ focused }) => <TabIcon image={icons['home'][focused]} />
                 }}
-             />
-             <Tab.Screen
+            />
+            <Tab.Screen
                 name='categories'
                 component={CategoriesScreen}
                 options={{
-                    header:() => {},
-                    tabBarLabel: ({focused}) => {
+                    header: () => { },
+                    tabBarLabel: ({ focused }) => {
                         return <CustomText weight={focused ? 'bold' : 'light'} color={textColor[focused]}>Categories</CustomText>
                     },
                     tabBarLabelPosition: 'below-icon',
-                    tabBarIcon: ({focused}) => {
+                    tabBarIcon: ({ focused }) => {
                         return <TabIcon focused={focused} image={icons['categories'][focused]} />
                     },
                 }}
-             />
+            />
         </Tab.Navigator>
     )
 }
 
-const TabIcon = ({image, focused}) => {
-    const {colors} = useSelector(state => state.theme)
-    let style = { }
+const TabIcon = ({ image, focused }) => {
+    const { colors } = useSelector(state => state.theme)
+    let style = {}
 
-    if(focused !== undefined)
+    if (focused !== undefined)
         style.tintColor = focused ? colors['PRIMARY'] : colors['DARK']
 
     return <Image
-                style={[styles.icon, style]}
-                source={{uri: image}}
-            />
+        style={[styles.icon, style]}
+        source={{ uri: image }}
+    />
 }
 
 const styles = StyleSheet.create({
     icon: {
         aspectRatio: 1,
         resizeMode: 'contain',
-        height: verticalScale(20)
+        height: verticalScale(30)
     }
 })
 
