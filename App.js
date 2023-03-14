@@ -6,13 +6,18 @@
  */
 
 import { NavigationContainer } from '@react-navigation/native';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistor, store } from './src/Redux/Store';
 import MainScreen from './src/Screens/MainScreen';
+import { getFCMToken } from './src/utils/Pushnotifications';
 
 function App() {
+
+  useEffect(() => {
+    getFCMToken()
+  }, [])
 
   return (
     <Provider store={store}>
