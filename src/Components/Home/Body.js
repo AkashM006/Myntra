@@ -1,4 +1,4 @@
-import { SectionList, View } from 'react-native'
+import { SectionList, StyleSheet, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Config from 'react-native-config'
@@ -9,7 +9,8 @@ import Photo from './Photo'
 import Slider from './Slider'
 import Grid from './Grid'
 import Quote from '../Reusable/Quote'
-import Overlay from '../Reusable/Overlay'
+import CustomLoader from '../Reusable/CustomLoader'
+import { verticalScale } from '../../utils/Metrics'
 
 const Body = () => {
 
@@ -78,9 +79,18 @@ const Body = () => {
         showsVerticalScrollIndicator={false}
         ListFooterComponent={() => <Quote loading={loading} />}
       />
-      {loading && <Overlay render={true} removeShadow />}
+      {loading && <View style={styles.loaderContainer}><CustomLoader /></View>}
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+    loaderContainer: {
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        top: verticalScale(120)
+    }
+})
 
 export default Body
