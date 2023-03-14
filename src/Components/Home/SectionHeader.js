@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
         marginTop: verticalScale(2)
     },
     card: { marginRight: horizontalScale(15), height: verticalScale(80) },
-    list: {paddingBottom: verticalScale(5),},
+    list: { paddingBottom: verticalScale(5), },
     outerContainer: {
         borderBottomColor: 'rgba(0,0,0,0.1)',
         borderBottomWidth: moderateScale(1),

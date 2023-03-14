@@ -2,6 +2,7 @@ import { Text } from 'react-native'
 import React from 'react'
 import Animated from 'react-native-reanimated'
 import { useSelector } from 'react-redux'
+import { moderateScale } from '../../utils/Metrics'
 
 const CustomText = ({ children, fontFamily, style, weight, isAnimated, size, color, top, bottom, left, right, vertical, horizontal, align, strike, ...props }) => {
 
@@ -17,7 +18,7 @@ const CustomText = ({ children, fontFamily, style, weight, isAnimated, size, col
     const styles = {
         fontFamily: fontFamily ?? 'Assistant-Regular',
         fontWeight: weightList[weight],
-        fontSize: size ?? 12,
+        fontSize: size ? moderateScale(size) : moderateScale(12),
         color: color ?? 'black',
         textAlign: align,
         textDecorationLine: strike ? 'line-through' : 'none'

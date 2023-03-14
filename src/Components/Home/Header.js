@@ -8,7 +8,7 @@ import ICONS from '../../icons/icons'
 
 const Header = () => {
 
-    const {colors} = useSelector(state => state.theme)
+    const { colors } = useSelector(state => state.theme)
 
     const ICONS_LIST = [
         {
@@ -29,24 +29,24 @@ const Header = () => {
         },
     ]
 
-  return (
-    <View style={[styles.container, {backgroundColor: colors['LIGHT']}]}>
-      <View style={styles.leftContainer}>
-        <Image style={styles.logo} source={{uri: ICONS.ICON_LOGO}} />
-        <View style={{marginLeft: horizontalScale(5)}}>
-            <CustomText size={moderateScale(10)}>Become</CustomText>
-            <CustomText size={moderateScale(10)} color={colors['PRIMARY']}>Insider</CustomText>
+    return (
+        <View style={[styles.container, { backgroundColor: colors['LIGHT'] }]}>
+            <View style={styles.leftContainer}>
+                <Image style={styles.logo} source={{ uri: ICONS.ICON_LOGO }} />
+                <View style={{ marginLeft: horizontalScale(5) }}>
+                    <CustomText size={10}>Become</CustomText>
+                    <CustomText size={10} color={colors['PRIMARY']}>Insider</CustomText>
+                </View>
+            </View>
+            <View style={styles.rightContainer}>
+                {ICONS_LIST.map(item => (
+                    <TouchableOpacity key={item.id}>
+                        <Image style={styles.icon} source={{ uri: item.image }} tintColor={colors['DARK']} />
+                    </TouchableOpacity>
+                ))}
+            </View>
         </View>
-      </View>
-      <View style={styles.rightContainer}>
-        {ICONS_LIST.map(item => (
-            <TouchableOpacity key={item.id}>
-                <Image style={styles.icon} source={{uri: item.image}} tintColor={colors['DARK']}  />
-            </TouchableOpacity>
-        ))}
-      </View>
-    </View>
-  )
+    )
 }
 
 const styles = StyleSheet.create({
