@@ -1,5 +1,6 @@
 import { View } from 'react-native'
 import React from 'react'
+import Header from '../Components/Home/Header'
 
 const HomeScreen = () => {
 
@@ -11,6 +12,7 @@ const HomeScreen = () => {
 
   return (
     <View>
+      <Header />
     </View>
   )
 }
