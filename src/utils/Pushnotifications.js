@@ -9,4 +9,16 @@ const getFCMToken = async _ => {
     }
 }
 
-export { getFCMToken }
+const foregroundNotificationListener = _ => {
+    return messaging().onMessage(async remoteMessage => {
+        console.log('Message: ', remoteMessage)
+    })
+}
+
+const backgroundNotificationListener = _ => {
+    messaging().setBackgroundMessageHandler(async remoteMessage => {
+        console.log("Background Message: ", remoteMessage)
+    })
+}
+
+export { getFCMToken, backgroundNotificationListener, foregroundNotificationListener }

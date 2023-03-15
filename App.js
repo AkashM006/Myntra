@@ -11,12 +11,16 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistor, store } from './src/Redux/Store';
 import MainScreen from './src/Screens/MainScreen';
-import { getFCMToken } from './src/utils/Pushnotifications';
+import { foregroundNotificationListener, getFCMToken } from './src/utils/Pushnotifications';
 
 function App() {
 
   useEffect(() => {
     getFCMToken()
+
+    const unsubscribe = foregroundNotificationListener()
+
+    return unsubscribe
   }, [])
 
   return (
