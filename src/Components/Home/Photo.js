@@ -7,7 +7,7 @@ const Photo = ({ link, height, index, title }) => {
 
     const navigation = useNavigation()
 
-    return (<TouchableOpacity onPress={() => navigation.navigate('List', {
+    return (<TouchableOpacity onPress={() => navigation.navigate('list', {
         title
     })}>
         <Image source={{ uri: link }} style={[styles.image, { height, marginTop: index === 1 ? verticalScale(5) : 0 }]} />

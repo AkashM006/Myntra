@@ -13,7 +13,7 @@ const SectionHeader = ({ sections }) => {
 
     const renderCard = ({ item, index }) => {
         return (
-            <TouchableOpacity style={styles.card} key={index} onPress={() => navigation.navigate('List', {
+            <TouchableOpacity style={styles.card} key={index} onPress={() => navigation.navigate('list', {
                 title: item.name,
                 id: item.id
             })} >

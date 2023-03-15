@@ -2,7 +2,7 @@ import { Text } from 'react-native'
 import React from 'react'
 import Animated from 'react-native-reanimated'
 import { useSelector } from 'react-redux'
-import { moderateScale } from '../../utils/Metrics'
+import { horizontalScale, moderateScale, verticalScale } from '../../utils/Metrics'
 
 const CustomText = ({ children, fontFamily, style, weight, isAnimated, size, color, top, bottom, left, right, vertical, horizontal, align, strike, ...props }) => {
 
@@ -24,12 +24,12 @@ const CustomText = ({ children, fontFamily, style, weight, isAnimated, size, col
         textDecorationLine: strike ? 'line-through' : 'none'
     }
 
-    if (left) styles['marginLeft'] = left
-    if (right) styles['marginRight'] = right
-    if (bottom) styles['marginBottom'] = bottom
-    if (top) styles['marginTop'] = top
-    if (vertical) styles['marginVertical'] = vertical
-    if (horizontal) styles['marginHorizontal'] = horizontal
+    if (left) styles['marginLeft'] = horizontalScale(left)
+    if (right) styles['marginRight'] = horizontalScale(right)
+    if (bottom) styles['marginBottom'] = verticalScale(bottom)
+    if (top) styles['marginTop'] = verticalScale(top)
+    if (vertical) styles['marginVertical'] = verticalScale(vertical)
+    if (horizontal) styles['marginHorizontal'] = horizontalScale(horizontal)
 
     if (isAnimated && isAnimated === true)
         return (<Animated.Text {...props} style={[styles, style]}>{children}</Animated.Text>)

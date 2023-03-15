@@ -10,7 +10,7 @@ const Grid = ({ item }) => {
     const navigation = useNavigation()
     const { colors } = useSelector(state => state.theme)
 
-    const pressHandler = () => { navigation.navigate('List', { title: 'You maybe interested in' }) }
+    const pressHandler = () => { navigation.navigate('list', { title: 'You maybe interested in' }) }
 
     return (
         <View style={[styles.container, { backgroundColor: colors['LIGHT'] }]}>

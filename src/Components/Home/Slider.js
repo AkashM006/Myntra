@@ -11,7 +11,7 @@ const Slider = ({ card }) => {
     const { colors } = useSelector(state => state.theme)
 
     const renderItem = ({ item }) =>
-        <TouchableOpacity onPress={() => navigation.navigate('List', { title: 'Exclusives' })}>
+        <TouchableOpacity onPress={() => navigation.navigate('list', { title: 'Exclusives' })}>
             <Image source={{ uri: item }} style={[{ height: +card.height, width: +card.width, }, styles.image]} />
         </TouchableOpacity>
 

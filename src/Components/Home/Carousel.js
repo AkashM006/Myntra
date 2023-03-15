@@ -10,7 +10,7 @@ const Card = ({ img }) => {
     const width = useWindowDimensions().width
     const navigation = useNavigation()
 
-    const pressHandler = () => navigation.navigate('List', { title: 'Gift Cards' })
+    const pressHandler = () => navigation.navigate('list', { title: 'Gift Cards' })
 
     return (
         <TouchableOpacity onPress={pressHandler} style={[styles.imageContainer, { width: width - 20 }]}>

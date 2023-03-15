@@ -1,7 +1,8 @@
 import { Animated } from 'react-native'
 import React, { useEffect, useRef } from 'react'
+import { horizontalScale } from '../../utils/Metrics'
 
-const Skeleton = ({ height, width, borderRadius }) => {
+const Skeleton = ({ height, width, borderRadius, aspectRatio }) => {
 
     let opacity = useRef(new Animated.Value(0.3))
 
@@ -22,15 +23,18 @@ const Skeleton = ({ height, width, borderRadius }) => {
         ).start()
     }, [])
 
+    const styles = {
+        height,
+        borderRadius,
+        backgroundColor: 'lightgray',
+        marginRight: horizontalScale(6),
+    }
+
+    if(width)styles.width = width
+    else styles.aspectRatio = aspectRatio
+
     return (
-        <Animated.View style={{
-            height,
-            width,
-            borderRadius,
-            backgroundColor: 'lightgray',
-            opacity: opacity.current,
-            marginRight: 6,
-        }} />
+        <Animated.View style={[styles,{opacity: opacity.current,}]} />
     )
 }
 
