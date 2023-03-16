@@ -30,12 +30,15 @@ const Header = () => {
     ]
 
     return (
-        <View style={[styles.container, { backgroundColor: colors['LIGHT'] }]}>
+        <View style={[styles.container, { 
+                backgroundColor: colors['LIGHT'],
+                borderBottomColor: colors['SHADOW']
+             }]}>
             <View style={styles.leftContainer}>
                 <Image style={styles.logo} source={{ uri: ICONS.ICON_LOGO }} />
                 <View style={{ marginLeft: horizontalScale(5) }}>
-                    <CustomText size={10}>Become</CustomText>
-                    <CustomText size={10} color={colors['PRIMARY']}>Insider</CustomText>
+                    <CustomText size={12} color={colors['DARK']}>Become</CustomText>
+                    <CustomText size={12} color={colors['PRIMARY']}>Insider</CustomText>
                 </View>
             </View>
             <View style={styles.rightContainer}>
@@ -57,7 +60,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        borderBottomColor: 'rgba(0,0,0,0.1)',
         borderBottomWidth: moderateScale(2)
     },
     logo: {

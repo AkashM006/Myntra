@@ -15,7 +15,7 @@ const Progressor = ({ count, items, goTop }) => {
 
     return (
         <>
-            {items >= 10 && <View style={styles.animatedContainer}>
+            {items >= 10 && <View style={[styles.animatedContainer,{ borderColor: colors['SHADOW'] }]}>
                 <TouchableOpacity style={styles.container} onPress={goTop}>
                     <View style={styles.leftContainer}>
                         <Image tintColor={'white'} source={{ uri: ICONS.ICON_BACK }} style={styles.icon} />
@@ -39,7 +39,9 @@ const styles = StyleSheet.create({
         top: verticalScale(30),
         width: '50%',
         alignSelf: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        borderWidth: moderateScale(1),
+        borderRadius: moderateScale(100)
     },
     container: {
         width: '100%',

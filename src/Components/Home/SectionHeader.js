@@ -1,4 +1,4 @@
-import { StyleSheet, Image, TouchableOpacity, FlatList, View } from 'react-native'
+import { StyleSheet, Image, TouchableOpacity, FlatList, View, Platform } from 'react-native'
 import React from 'react'
 import Skeleton from '../Reusable/Skeleton'
 import { useNavigation } from '@react-navigation/native'
@@ -18,7 +18,7 @@ const SectionHeader = ({ sections }) => {
                 id: item.id
             })} >
                 <Image style={styles.image} source={{ uri: item.photoURL }} />
-                <CustomText size={10} style={styles.text}>{item.name.toUpperCase()}</CustomText>
+                <CustomText size={10} style={styles.text} color={colors['DARK']}>{item.name.toUpperCase()}</CustomText>
             </TouchableOpacity>
         )
     }
@@ -27,7 +27,7 @@ const SectionHeader = ({ sections }) => {
 
     if (sections[0].data.length === 0) {
         let data = Array(10).fill(1)
-        return <View style={styles.outerContainer}>
+        return <View style={[styles.outerContainer,{borderBottomColor: colors['SHADOW']}]}>
             <FlatList
                 horizontal
                 style={[styles.list, { backgroundColor: colors['LIGHT'] }]}
@@ -41,7 +41,7 @@ const SectionHeader = ({ sections }) => {
     }
     let data = sections[0].data[0]
     return (
-        <View style={styles.outerContainer}>
+        <View style={[styles.outerContainer,{borderBottomColor: colors['SHADOW']}]}>
             <FlatList
                 horizontal
                 style={[styles.list, { backgroundColor: colors['LIGHT'] }]}
@@ -75,7 +75,6 @@ const styles = StyleSheet.create({
     card: { marginRight: horizontalScale(15), height: verticalScale(80) },
     list: { paddingBottom: verticalScale(5), },
     outerContainer: {
-        borderBottomColor: 'rgba(0,0,0,0.1)',
         borderBottomWidth: moderateScale(1),
     }
 })

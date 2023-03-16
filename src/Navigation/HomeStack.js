@@ -1,4 +1,5 @@
 import { createStackNavigator } from "@react-navigation/stack";
+import DetailScreen from "../Screens/DetailsScreen";
 import ListScreen from "../Screens/ListScreen";
 import HomeTab from './HomeTab'
 
@@ -21,7 +22,12 @@ function HomeStack(){
                 name='list'
                 component={ListScreen}
                 options={options}
-              />
+            />
+            <Stack.Screen
+                name='detail'
+                component={DetailScreen}
+                options={options}
+            />
         </Stack.Navigator>
     )
 }

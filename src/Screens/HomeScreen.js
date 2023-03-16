@@ -1,4 +1,3 @@
-import { View } from 'react-native'
 import React from 'react'
 import Header from '../Components/Home/Header'
 import Body from '../Components/Home/Body'

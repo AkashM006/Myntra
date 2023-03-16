@@ -1,20 +1,14 @@
-import { View, StyleSheet, ActivityIndicator } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 import React from 'react'
 import Quote from '../Reusable/Quote'
 import { moderateScale, verticalScale } from '../../utils/Metrics'
-import { useSelector } from 'react-redux'
+import CustomLoader from '../Reusable/CustomLoader'
 
 const ListFooter = ({ count, maxCount }) => {
 
-    const {colors} = useSelector(state => state.theme)
-
     return (
         <View style={styles.container}>
-            {count < maxCount &&
-                <View>
-                    <ActivityIndicator style={styles.loader} size={'small'} color={colors['PRIMARY']} />
-                </View>
-            }
+            { count < maxCount && <CustomLoader /> }
             <Quote loading={false} />
         </View>
     )
@@ -27,7 +21,6 @@ const styles = StyleSheet.create({
     },
     loader: {
         padding: '2%',
-        backgroundColor: 'white',
         alignSelf: 'center',
         borderRadius: moderateScale(100)
     }

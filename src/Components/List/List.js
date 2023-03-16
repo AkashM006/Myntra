@@ -10,6 +10,7 @@ import Footer from './Footer'
 import ListFooter from './ListFooter'
 import Card from './Card'
 import Progressor from './Progressor'
+import { useSelector } from 'react-redux'
 
 const List = () => {
 
@@ -18,6 +19,8 @@ const List = () => {
     const [isLoading, setIsLoading] = useState(true)
     const height = useWindowDimensions().height
     const id = useRoute().params?.id ?? 1
+
+    const {colors} = useSelector(state => state.theme)
 
     const getData = async () => {
         if (count !== null && clothes.length >= count) return
@@ -75,7 +78,7 @@ const List = () => {
     return (
         <>
             <ListHeader itemCount={count} />
-            <View style={styles.container}>
+            <View style={[styles.container,{ backgroundColor: colors['LIGHT'] }]}>
                 {isLoading === false && <FlatList
                     data={clothes}
                     renderItem={renderItem}
@@ -103,14 +106,14 @@ const List = () => {
                 {!isLoading && <Progressor goTop={scrollToTop} count={count} items={currentItem} />}
                 { !isLoading && <Footer />}
                 </View>
-            </>
+        </>
     )
 }
 
 const styles = StyleSheet.create({
     container: {flex: 1},
     list: { marginTop: verticalScale(5) },
-    loaderContainer: {marginTop: verticalScale(10)}
+    loaderContainer: { marginTop: verticalScale(10), }
 })
 
 export default List

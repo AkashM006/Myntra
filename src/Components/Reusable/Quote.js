@@ -11,8 +11,8 @@ const Quote = ({ loading }) => {
     return (
         <>
             {loading === false && <View style={styles.container}>
-                <View style={styles.line} />
-                <CustomText>
+                <View style={[styles.line,{backgroundColor: colors['DARK']}]} />
+                <CustomText color={colors['DARK']} > 
                     "Dressing well Is A Form Of Good Manners."
                 </CustomText>
                 <CustomText color={colors['SHADEDARK']} style={{ alignSelf: 'center', }}>
@@ -31,7 +31,6 @@ const styles = StyleSheet.create({
     line: {
         width: horizontalScale(90),
         height: verticalScale(1),
-        backgroundColor: 'black',
         marginBottom: verticalScale(15),
         alignSelf: 'center',
     }

@@ -31,11 +31,11 @@ const Card = ({ cloth, index }) => {
 
     const priceTextStyle = {
         true: {
-            color: COLORS.SHADELIGHT,
+            color: COLORS.SHADEDARK,
             textDecorationLine: 'line-through'
         },
         false: {
-            color: COLORS.SHADEDARK,
+            color: COLORS.DARK,
             fontWeight: '700'
         }
     }
@@ -43,14 +43,19 @@ const Card = ({ cloth, index }) => {
     const hasRating = (cloth.ratings > 0) ? true : false
 
     const pressHandler = () => {
-        navigation.navigate('Detail', {
+        navigation.navigate('detail', {
             // name: cloth.name
             id: cloth.id
         })
     }
 
     return (
-        <TouchableOpacity onPress={pressHandler} style={[styles.container, { height: (height - 65) / 2, borderRightWidth: moderateScale(1) }]}>
+        <TouchableOpacity onPress={pressHandler} style={[styles.container, { 
+                height: (height - 65) / 2, 
+                borderRightWidth: moderateScale(1), 
+                backgroundColor: colors['LIGHT'],
+                borderColor: colors['SHADOW']
+            }]}>
             <View style={styles.imageContainer}>
                 <Image source={{ uri: cloth.photo }} style={styles.image} />
                 {hasRating && <Rating count={cloth.ratings} rating={cloth.star} />}
@@ -74,7 +79,7 @@ const Card = ({ cloth, index }) => {
                     <CustomText size={14} style={priceTextStyle[hasDiscount]}>
                         {formatCurrency(cloth.mrp).split('.')[0]}
                     </CustomText>
-                    {hasDiscount && <CustomText weight={'light'} style={styles.discount}>
+                    {hasDiscount && <CustomText size={14} color={colors['DARK']} weight={'light'} style={styles.discount}>
                         {formatCurrency(+calculateDiscount(cloth.mrp, cloth.discount)).split('.')[0]}
                     </CustomText>}
                     {hasDiscount && <CustomText color={COLORS.PRIMARY} style={styles.percentage}>
@@ -92,9 +97,7 @@ const Card = ({ cloth, index }) => {
 const styles = StyleSheet.create({
     container: {
         width: '50%',
-        backgroundColor: 'white',
         elevation: 2,
-        borderColor: 'lightgray',
         borderBottomWidth: moderateScale(1),
     },
     imageContainer: { height: '75%', },

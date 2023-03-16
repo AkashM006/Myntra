@@ -1,21 +1,28 @@
-import { StyleSheet, ActivityIndicator, View } from 'react-native'
+import { StyleSheet, ActivityIndicator } from 'react-native'
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { moderateScale } from '../../utils/Metrics'
 
 const CustomLoader = () => {
 
     const { colors } = useSelector(state => state.theme)
 
-    return <ActivityIndicator style={[styles.loader, { backgroundColor: colors['LIGHT'] }]} size={'small'} color={colors['PRIMARY']} />
+    return  <ActivityIndicator 
+                style={[styles.loader, { 
+                        backgroundColor: colors['LIGHT'],
+                        borderColor: colors['SHADOW']
+                    }]} 
+                size={'small'} 
+                color={colors['PRIMARY']} 
+            />
 }
 
 const styles = StyleSheet.create({
     loader: {
         padding: '2%',
         alignSelf: 'center',
-        borderRadius: 100,
-        borderWidth: 1,
-        borderColor: 'rgba(0,0,0,0.1)'
+        borderRadius: moderateScale(100),
+        borderWidth: moderateScale(1),
     },
 })
 

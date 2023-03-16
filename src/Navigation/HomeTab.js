@@ -45,6 +45,7 @@ function HomeTab() {
         <Tab.Navigator screenOptions={{
             tabBarStyle: {
                 height: verticalScale(70),
+                backgroundColor: colors['LIGHT']
             }
         }}>
             <Tab.Screen
