@@ -14,9 +14,13 @@ const NavigationHeader = ({ scroll, name }) => {
     const height = useWindowDimensions().height
     const imageHeight = height / 1.35
     const { theme, colors } = useSelector(state => state.theme)
+
     const startColor = theme === 'light' ? 'rgba(255,255,255,0)' : 'rgba(0,0,0,0)'
     const endColor = theme === 'light' ? 'rgba(255,255,255,1)' : 'rgba(0,0,0,1)'
- 
+
+    const start = imageHeight - verticalScale(35)
+    const end = imageHeight - verticalScale(20)
+
     const rStyle = useAnimatedStyle(() => {
         return {
             backgroundColor: interpolateColor(
@@ -24,11 +28,6 @@ const NavigationHeader = ({ scroll, name }) => {
                 [0, imageHeight + 10],
                 [startColor, endColor]
             ),
-            // opacity: interpolate(
-            //     scroll.value,
-            //     [0, imageHeight + 10],
-            //     [0, 1]
-            // )
         }
     }, [])
 
@@ -36,7 +35,7 @@ const NavigationHeader = ({ scroll, name }) => {
         return {
             opacity: interpolate(
                 scroll.value,
-                [0, imageHeight - 30, imageHeight - 10],
+                [0, start, end],
                 [0, 0, 1]
             )
         }
@@ -44,9 +43,9 @@ const NavigationHeader = ({ scroll, name }) => {
 
     return (
         <>
-            {scroll && <Animated.View style={[styles.header, rStyle, ]}>
+            {scroll && <Animated.View style={[styles.header, rStyle,]}>
                 <View style={styles.leftContainer}>
-                    <TouchableOpacity onPress={() => navigation.goBack()} style={[styles.iconContainer,{ backgroundColor: colors['LIGHT'] }]}>
+                    <TouchableOpacity onPress={() => navigation.goBack()} style={[styles.iconContainer, { backgroundColor: colors['LIGHT'] }]}>
                         <Image source={{ uri: ICONS.ICON_BACK }} style={[styles.icon, { tintColor: colors['DARK'] }]} />
                     </TouchableOpacity>
                     <CustomText color={colors['DARK']} isAnimated={true} weight={'bold'} size={18} style={textStyle}>
@@ -54,13 +53,13 @@ const NavigationHeader = ({ scroll, name }) => {
                     </CustomText>
                 </View>
                 <View style={styles.rightContainer}>
-                    <TouchableOpacity style={[styles.iconContainer,{ backgroundColor: colors['LIGHT'] }]}>
+                    <TouchableOpacity style={[styles.iconContainer, { backgroundColor: colors['LIGHT'] }]}>
                         <Image source={{ uri: ICONS.ICON_SHARE }} style={[styles.icon, { tintColor: colors['DARK'] }]} />
                     </TouchableOpacity>
-                    <TouchableOpacity style={[styles.iconContainer,{ backgroundColor: colors['LIGHT'] }]} onPress={() => navigation.navigate('Wishlist')} >
+                    <TouchableOpacity style={[styles.iconContainer, { backgroundColor: colors['LIGHT'] }]} onPress={() => navigation.navigate('Wishlist')} >
                         <Image source={{ uri: ICONS.ICON_HEART }} style={[styles.icon, { tintColor: colors['DARK'] }]} />
                     </TouchableOpacity>
-                    <TouchableOpacity style={[styles.iconContainer,{ backgroundColor: colors['LIGHT'] }]}>
+                    <TouchableOpacity style={[styles.iconContainer, { backgroundColor: colors['LIGHT'] }]}>
                         <Image source={{ uri: ICONS.ICON_BAG }} style={[styles.icon, { tintColor: colors['DARK'] }]} />
                     </TouchableOpacity>
                 </View>
@@ -84,7 +83,7 @@ const styles = StyleSheet.create({
     },
     iconContainer: {
         padding: verticalScale(10),
-        paddingHorizontal: horizontalScale(10),
+        aspectRatio: 1,
         alignSelf: 'flex-start',
         borderRadius: 100
     },

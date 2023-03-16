@@ -21,7 +21,7 @@ const DARKCOLORS = {
     SHADEDARK: '#aaaaaa',
     DANGERBG: '#ffada8',
     DANGER: '#ff5349',
-    LIGHT: Platform.OS === 'andorid' ? '#2C2F33' : 'black',
+    LIGHT: Platform.OS === 'android' ? '#2C2F33' : 'black',
     DARK: 'white',
     SHADOW: 'rgba(255,255,255,0.3)'
 }

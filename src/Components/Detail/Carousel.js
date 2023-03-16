@@ -11,11 +11,11 @@ const Carousel = ({ images, ratedCount, rating }) => {
 
     const { height, width } = useWindowDimensions()
 
-    const renderItem = ({ item, index }) => <Image source={{ uri: item }} style={{ width }} />
+    const renderItem = ({ item, index }) => <Image source={{ uri: item }} style={{ width, resizeMode: 'contain' }} />
 
     const scrollX = useRef(new Animated.Value(0)).current
 
-    const {colors} = useSelector(state => state.theme)
+    const { colors } = useSelector(state => state.theme)
 
     return (
         <View style={{ backgroundColor: colors['LIGHT'] }}>
