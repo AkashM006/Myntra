@@ -12,6 +12,7 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistor, store } from './src/Redux/Store';
 import MainScreen from './src/Screens/MainScreen';
+import RNBootSplash from 'react-native-bootsplash'
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
   return (
     <Provider store={store}>
       <PersistGate persistor={persistor}>
-        <NavigationContainer>
+        <NavigationContainer onReady={() => RNBootSplash.hide({ fade: true, duration: 500 })}>
           <RootSiblingParent>
             <MainScreen />
           </RootSiblingParent>

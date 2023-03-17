@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux'
 
 const Details = ({ about, specs }) => {
 
-    const dummy = Array(5).fill(1)
     const { colors } = useSelector(state => state.theme)
 
     if (specs) {
@@ -25,13 +24,13 @@ const Details = ({ about, specs }) => {
         return Object.entries(obj).map(item => (
             <View style={styles.specContainer} key={item[0]}>
                 <CustomText color={colors['DARK']} weight='bolder' bottom={5} >{item[0]}</CustomText>
-                <CustomText color={colors['DARK']} style={styles.textBody} >{item[1]}</CustomText>
+                <CustomText color={colors['DARK']} style={[styles.textBody, { borderColor: colors['DARK'] }]} >{item[1]}</CustomText>
             </View>
         ))
     }
 
     return (
-        <View style={[styles.container,{ backgroundColor: colors['LIGHT'] }]}>
+        <View style={[styles.container, { backgroundColor: colors['LIGHT'] }]}>
             <View>
                 <CustomText weight={'light'} size={14} color={colors['DARK']}>
                     Product Details
