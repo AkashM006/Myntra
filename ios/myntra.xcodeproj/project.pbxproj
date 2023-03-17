@@ -18,6 +18,7 @@
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		86EFF8C8B1024C9EB28070CA /* Assistant-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7403213CBB5C4F989E9B9682 /* Assistant-Light.ttf */; };
 		9FF518FA273148DE9EB46626 /* Assistant-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3288CA2F998C4166B9224880 /* Assistant-ExtraLight.ttf */; };
+		A2662ED229C45BF70093EBC7 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2662ED129C45BF70093EBC7 /* BootSplash.storyboard */; };
 		A323B91CBCEE4E909A9A9B44 /* Assistant-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 216DAFCA998A44F3A273F1E1 /* Assistant-Regular.ttf */; };
 		A5386598A2E745ABA551F5A5 /* Assistant-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A030DB0BE5EE4675956EEB87 /* Assistant-ExtraBold.ttf */; };
 		B947293E60EB4C31A0BB6657 /* Assistant-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5723312E17AF4E94BE9BD071 /* Assistant-SemiBold.ttf */; };
@@ -44,19 +45,20 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = myntra/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = myntra/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-myntra-myntraTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-myntra-myntraTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		216DAFCA998A44F3A273F1E1 /* Assistant-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Assistant-Regular.ttf"; path = "../assets/fonts/Assistant-Regular.ttf"; sourceTree = "<group>"; };
-		309A8777AF284D6397FEC694 /* Assistant-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Assistant-Bold.ttf"; path = "../assets/fonts/Assistant-Bold.ttf"; sourceTree = "<group>"; };
-		3288CA2F998C4166B9224880 /* Assistant-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Assistant-ExtraLight.ttf"; path = "../assets/fonts/Assistant-ExtraLight.ttf"; sourceTree = "<group>"; };
-		32A3FA1501D941BE82E71EFA /* Assistant-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Assistant-Medium.ttf"; path = "../assets/fonts/Assistant-Medium.ttf"; sourceTree = "<group>"; };
+		216DAFCA998A44F3A273F1E1 /* Assistant-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Assistant-Regular.ttf"; path = "../assets/fonts/Assistant-Regular.ttf"; sourceTree = "<group>"; };
+		309A8777AF284D6397FEC694 /* Assistant-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Assistant-Bold.ttf"; path = "../assets/fonts/Assistant-Bold.ttf"; sourceTree = "<group>"; };
+		3288CA2F998C4166B9224880 /* Assistant-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Assistant-ExtraLight.ttf"; path = "../assets/fonts/Assistant-ExtraLight.ttf"; sourceTree = "<group>"; };
+		32A3FA1501D941BE82E71EFA /* Assistant-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Assistant-Medium.ttf"; path = "../assets/fonts/Assistant-Medium.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-myntra.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myntra.debug.xcconfig"; path = "Target Support Files/Pods-myntra/Pods-myntra.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-myntra.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myntra.release.xcconfig"; path = "Target Support Files/Pods-myntra/Pods-myntra.release.xcconfig"; sourceTree = "<group>"; };
-		5723312E17AF4E94BE9BD071 /* Assistant-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Assistant-SemiBold.ttf"; path = "../assets/fonts/Assistant-SemiBold.ttf"; sourceTree = "<group>"; };
+		5723312E17AF4E94BE9BD071 /* Assistant-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Assistant-SemiBold.ttf"; path = "../assets/fonts/Assistant-SemiBold.ttf"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-myntra-myntraTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myntra-myntraTests.debug.xcconfig"; path = "Target Support Files/Pods-myntra-myntraTests/Pods-myntra-myntraTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-myntra.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-myntra.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7403213CBB5C4F989E9B9682 /* Assistant-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Assistant-Light.ttf"; path = "../assets/fonts/Assistant-Light.ttf"; sourceTree = "<group>"; };
+		7403213CBB5C4F989E9B9682 /* Assistant-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Assistant-Light.ttf"; path = "../assets/fonts/Assistant-Light.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = myntra/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-myntra-myntraTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myntra-myntraTests.release.xcconfig"; path = "Target Support Files/Pods-myntra-myntraTests/Pods-myntra-myntraTests.release.xcconfig"; sourceTree = "<group>"; };
-		A030DB0BE5EE4675956EEB87 /* Assistant-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Assistant-ExtraBold.ttf"; path = "../assets/fonts/Assistant-ExtraBold.ttf"; sourceTree = "<group>"; };
+		A030DB0BE5EE4675956EEB87 /* Assistant-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Assistant-ExtraBold.ttf"; path = "../assets/fonts/Assistant-ExtraBold.ttf"; sourceTree = "<group>"; };
+		A2662ED129C45BF70093EBC7 /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = myntra/BootSplash.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -103,6 +105,7 @@
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
+				A2662ED129C45BF70093EBC7 /* BootSplash.storyboard */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
@@ -276,6 +279,7 @@
 				32A27646463B45F18CC74E75 /* Assistant-Bold.ttf in Resources */,
 				A5386598A2E745ABA551F5A5 /* Assistant-ExtraBold.ttf in Resources */,
 				9FF518FA273148DE9EB46626 /* Assistant-ExtraLight.ttf in Resources */,
+				A2662ED229C45BF70093EBC7 /* BootSplash.storyboard in Resources */,
 				86EFF8C8B1024C9EB28070CA /* Assistant-Light.ttf in Resources */,
 				29F878A0AD0D47D78BDEBC3A /* Assistant-Medium.ttf in Resources */,
 				A323B91CBCEE4E909A9A9B44 /* Assistant-Regular.ttf in Resources */,
