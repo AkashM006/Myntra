@@ -20,6 +20,8 @@ const Size = ({ sizes, setStickyFooter, size, setSize, setSizeContainer }) => {
 
     const getColor = item => item.available ? item.name === size ? COLORS.PRIMARY : COLORS.DARK : COLORS.SHADEDARK
 
+    const getWeight = item => item.available && item.name === size ? 'bolder' : ''
+
     return (
         <View onLayout={event => { setStickyFooter(event.nativeEvent.layout) }} style={[styles.container,{ backgroundColor: colors['LIGHT'] }]}>
             <View style={styles.titleContainer}>
@@ -39,7 +41,7 @@ const Size = ({ sizes, setStickyFooter, size, setSize, setSizeContainer }) => {
                             borderColor: getColor(item)
                         }]}>
                             <View>
-                                <CustomText color={getColor(item)}>
+                                <CustomText weight={getWeight(item)} color={getColor(item)}>
                                     {item.name}
                                 </CustomText>
                             </View>

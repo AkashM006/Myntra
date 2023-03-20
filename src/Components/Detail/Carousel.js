@@ -11,7 +11,7 @@ const Carousel = ({ images, ratedCount, rating }) => {
 
     const { height, width } = useWindowDimensions()
 
-    const renderItem = ({ item, index }) => <Image source={{ uri: item }} style={{ width, resizeMode: 'contain' }} />
+    const renderItem = ({ item, index }) => <Image source={{ uri: item }} style={{ width, resizeMode: 'cover' }} />
 
     const scrollX = useRef(new Animated.Value(0)).current
 
